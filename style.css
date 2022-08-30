@@ -1,0 +1,242 @@
+/*global.css*/
+body {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    background: url("img/element3.svg") no-repeat 1603px 2841px;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: 0;
+}
+
+hr {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1214px;
+}
+
+.default-tittle {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 56px;
+    color: #000000;
+}
+
+.default-line {
+    margin-top: 26px;
+    width: 56px;
+    height: 1.96px;
+    background: #000000;
+}
+
+.default-paragraph {
+    margin-top: 31px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #7D7987;
+    max-width: 952px;
+}
+
+.learn-more-btn {
+    margin-top: 39px;
+    width: 200px;
+    height: 54px;
+    border: 1.4px solid #458FF6;
+    border-radius: 55px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #458FF6;
+}
+/*header.css*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.logo {
+    width: 160px;
+    height: 41px;
+}
+
+.header__nav ul {
+    display: flex;
+}
+
+.header__nav-item {
+    margin-right: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #1F1534;
+    opacity: 0.5;
+}
+
+.header__nav-item:first-child {
+    margin-right: 40px;
+    font-weight: 700;
+    font-size: 18px;
+    opacity: 1;
+}
+/*hero.css*/
+.hero {
+    background: url("img/element.svg") no-repeat left top 125px;
+}
+
+.hero_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 84px;
+}
+
+.hero__inner {
+    width: 445px;
+}
+
+.hero__tittle {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #000000;
+}
+
+.hero__paragraph {
+    margin-top: 25px;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 32px;
+    color: #7D7987;
+}
+
+.consult-today {
+    margin-top: 48px;
+    width: 200px;
+    height: 56px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    background-color: #458FF6;
+    border-radius: 55px;
+}
+/*healthcare-providers-section.css*/
+.healthcare-providers__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 210px;
+}
+
+.healthcare-providers__inner__text {
+    width: 450px;
+}
+/*services-section.css*/
+.services-section {
+    background: url("img/Vector.svg") no-repeat left 418px;
+}
+
+.services__inner__text {
+    display: flex;
+    padding-top: 212px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services__inner__text p {
+    text-align: center;
+}
+
+.services-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 40px;
+    background: url("img/element1.svg") no-repeat 1065px 411px;
+}
+
+.service-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 354px;
+    margin-top: 40px;
+    background: #fff;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+}
+
+.service-btn__inner {
+    width: 266px;
+}
+
+.service-btn__title {
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 56px;
+    color: #000000;
+}
+
+.service-btn-paragraph {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    color: #7D7987;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+/*footer.css*/
+.footer-section {
+    margin-top: 165px;
+    height: 165px;
+    background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+}
+
+.footer {
+    display: flex;
+    height: 165px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__nav ul {
+    display: flex;
+}
+
+.footer__nav-item a {
+    margin-left: 177px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+    color: #ffffff;
+}
