@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>Trafalgar</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <section class="hero">
     <div class="container">
         <header class="header">
+            <div class="header__menu">
+                <img src="img/menu-icon.svg" alt="menu-button" onclick="toggleMenu()">
+            </div>
             <img src="img/logo.svg" alt="Logo" class="logo">
-            <nav class="header__nav">
+            <nav id="nav-links" class="header__nav">
                 <ul>
                     <li class="header__nav-item"><a href="">Home</a></li>
                     <li class="header__nav-item"><a href="">Find a doctor</a></li>
@@ -54,6 +58,7 @@
     </div>
 </section>
 <section class="services-section">
+    <div class="services-background"></div>
     <div class="container">
         <div class="services__inner__text">
             <h1 class="default-tittle">Our services</h1>
@@ -155,5 +160,6 @@
         </footer>
     </div>
 </section>
+<script src="index.js"></script>
 </body>
 </html>
