@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    background: url("../img/element3.svg") no-repeat 1603px 2841px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: 0;
+}
+
+hr {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1214px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+.default-tittle {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 3.5rem;
+    color: #000000;
+}
+
+.default-line {
+    margin-top: 26px;
+    width: 3.5rem;
+    height: 0.125rem;
+    background: #000000;
+}
+
+.default-paragraph {
+    margin-top: 31px;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    color: #7D7987;
+    max-width: 952px;
+}
+
+.learn-more-btn {
+    margin-top: 39px;
+    width: 200px;
+    height: 54px;
+    border: 1.4px solid #458FF6;
+    border-radius: 55px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #458FF6;
+}
+
+@media screen and (max-width: 1024px) {
+    .learn-more-btn {
+        width: 160px;
+        height: 44px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .learn-more-btn {
+        width: 128px;
+        height: 35px;
+    }
+}

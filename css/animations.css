@@ -1,0 +1,21 @@
+@keyframes floating {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    25% {
+        transform: rotate(-5grad);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+
+    75% {
+        transform: rotate(0grad);
+    }
+
+    100% {
+        transform: translateX(-100px);
+    }
+}

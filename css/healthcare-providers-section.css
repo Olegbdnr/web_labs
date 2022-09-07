@@ -1,0 +1,44 @@
+.healthcare-providers__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 210px;
+}
+
+@media screen and (max-width: 768px) {
+    .healthcare-providers__inner {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .healthcare-providers__inner {
+        padding-top: 150px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .healthcare-providers__inner img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .healthcare-providers__inner img {
+        display: none;
+    }
+}
+
+.healthcare-providers__inner__text {
+    width: 450px;
+}
+
+@media screen and (max-width: 768px) {
+    .healthcare-providers__inner__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
