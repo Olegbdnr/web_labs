@@ -1,0 +1,61 @@
+.books-list {
+    padding: 20px 20px;
+}
+
+.books-list__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    margin-top: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 235px;
+    border: #D8D8D8 2px inset;
+}
+
+.book-card span {
+    font-weight: 700;
+    color: #4A4A4A;
+}
+
+.book-img {
+    width: 235px;
+}
+
+.book-tittle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.price-of-book {
+    margin-top: 10px;
+}
+
+.btn-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-btn {
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+    background: #0080FF;
+    color: white;
+    font-weight: bold;
+}
+
+.delete-btn {
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+    background: #FF3333;
+    color: white;
+    font-weight: bold;
+}
