@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Crud App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="tittle-wrapper">
+        <h1 class="tittle">My books</h1>
+    </div>
+    <nav>
+        <ul class="navigation">
+            <li><button class="nav_button outlined" id="home-btn">Home</button></li>
+            <li><button class="nav_button " id="create-btn">Create/Edit</button></li>
+        </ul>
+    </nav>
+    <main class="main" id="main">
+        <form class="add-form" id="add-form">
+            <div class="tittle-wrapper">
+                <h3 class="form-tittle" id="form-tittle">Create book</h3>
+            </div>
+            <div class="input-wrapper">
+                <label class="form-label">Tittle</label>
+                <input type="text" class="form-input" id="tittle-input">
+            </div>
+            <div class="input-wrapper">
+                <label class="form-label">Author</label>
+                <input type="text" class="form-input" id="author-input">
+            </div>
+            <div class="input-wrapper">
+                <label class="form-label">Number of pages</label>
+                <input type="number" class="form-input" id="pages-num-input">
+            </div>
+            <div class="input-wrapper">
+                <label class="form-label">Price in USD</label>
+                <input type="number" class="form-input" id="price-input">
+            </div>
+            <button class="submit-btn" type="submit" id="submit-btn">Submit</button>
+            <button class="submit-btn" id="submit-edit">Edit</button>
+        </form>
+        <aside class="side-section">
+            <div class="find-section">
+                <div class="tittle-wrapper">
+                    <h3 class="form-tittle">Find book</h3>
+                </div>
+                <div class="input-wrapper">
+                    <label class="form-label">Find book by tittle</label>
+                    <input type="text" class="form-input" id="find-input">
+                </div>
+                <div class="buttons-wrapper">
+                    <button class="find-btn" id="find-btn">Find</button>
+                    <button class="clear-btn" id="clear-btn">Clear</button>
+                </div>
+            </div>
+                <div class="label-wrapper">
+                    <label for="accept" class="sort-items-label">Sort by the most expensive book</label>
+                    <input type="checkbox" id="accept" name="accept" value="yes" class="check-box">
+                </div>
+                <div class="label-wrapper">
+                    <label>Total amount:</label>
+                    <p class="total-amount-value" id="total-amount-value"></p>
+                    <button class="find-btn" id="count-btn">Count</button>
+                </div>
+        </aside>
+        <section class="items-section">
+            <ul class="items-container" id="items-container">
+
+            </ul>
+        </section>
+    </main>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
