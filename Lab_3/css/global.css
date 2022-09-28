@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    color: #4A4A4A;
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    border: 0;
+    background: none;
+    font-size: 16px;
+    color: #4A4A4A;
+}
+
+span {
+    font-weight: bold;
+    color: #8D8D8D;
+}
+
+.container {
+    margin: 0 20px;
+}
+
+.checkbox {
+    height: 25px;
+    width: 25px;
+}
