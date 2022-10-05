@@ -1,6 +1,6 @@
 body {
     font-family: Mulish, serif;
-
+    background-color: #F3F6FF;
 }
 
 h1 {
@@ -45,8 +45,32 @@ ul {
     margin: 0 auto;
 }
 
+.navigation {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.nav_button {
+    height: 30px;
+    font-size: 18px;
+    margin-left: 15px;
+    border-radius: 3px;
+    background: none;
+}
+
+.nav_button.outlined {
+    background-color: #DFE7FF;
+}
+
 .main {
     display: flex;
+    border-radius: 5px;
+    box-shadow:  rgb(150,150,150) 3px 3px 7px;
+    padding: 20px;
+}
+
+.main.create {
+    justify-content: center;
 }
 
 .check-box {
@@ -113,12 +137,13 @@ ul {
 }
 
 .items-section {
-    padding: 50px 40px;
+    padding: 0 20px;
 }
 
 .label-wrapper {
     display: flex;
     align-items: center;
+    margin-top: 35px;
 }
 
 .total-amount-value {
@@ -129,7 +154,7 @@ ul {
 
 .sort-items-label {
     font-size: 18px;
-    margin-right: 15px;
+    width: 220px;
 }
 
 .items-container {
@@ -146,6 +171,27 @@ ul {
     width: 250px;
     border: #ECECEC 1px outset;
     border-radius: 5px;
+}
+
+.btn-wrapper {
+    display: flex;
+    position: absolute;
+    width: 230px;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.delete-btn {
+    height: 20px;
+    width: 20px;
+    opacity: 15%;
+    transition: opacity 0.3s;
+}
+
+.delete-btn:hover {
+    opacity: 40%;
 }
 
 .item-img {
@@ -168,6 +214,10 @@ ul {
 
 .item-field {
     font-weight: 400;
+}
+
+.add-form {
+    display: none;
 }
 
 
