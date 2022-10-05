@@ -22,9 +22,17 @@ const editBtn = document.getElementById("submit-edit");
 const clickEvent = new Event("click");
 
 let books = [];
+fetch('http://localhost:5000/api/books', {method: 'GET'}).then(
+    (response) => {
+        response.json().then(
+            (json) => {
+                books = json;
+                renderItemsList(books);
+            })
+    });
 let currentIndex;
 
-const itemTemplate = ({tittle, author, numberOfPages, price}, index) => {
+const itemTemplate = ({tittle, author, pages, price}, index) => {
     return `
                 <li class="list-item" id="item">
                     <div class="item-body">
@@ -48,7 +56,7 @@ const itemTemplate = ({tittle, author, numberOfPages, price}, index) => {
                             </div>
                             <div class="item-field-wrapper">
                                 <span class="item-field">Number of pages:</span>
-                                <span class="item-field-value">${numberOfPages}</span>
+                                <span class="item-field-value">${pages}</span>
                             </div>
                             <div class="item-field-wrapper">
                                 <span class="item-field">Price:</span>
@@ -77,20 +85,24 @@ const clearValuesFromInputs = () => {
 const fillInputsValue = (book) => {
     tittleInput.value = book.tittle;
     authorInput.value = book.author;
-    numberOfPagesInput.value = book.numberOfPages;
+    numberOfPagesInput.value = book.pages;
     priceInput.value = book.price;
 }
 
 
 const sortBooksByPrice = (books) => {
     let sorted = books.slice(0);
-    sorted.sort(function (a, b) {return b.price - a.price;});
+    sorted.sort(function (a, b) {
+        return b.price - a.price;
+    });
     renderItemsList(sorted);
 }
 
 const findByTittle = (books) => {
     let result = books.slice(0);
-    result = result.filter(book => {return book.tittle.includes(findInput.value)});
+    result = result.filter(book => {
+        return book.tittle.includes(findInput.value)
+    });
     renderItemsList(result);
 }
 
@@ -103,6 +115,15 @@ const countTotalAmount = (books) => {
 }
 
 const deleteItem = (index) => {
+    fetch(`http://localhost:5000/api/books/${books[index]._id}`, {
+        method: 'DELETE',
+    }).then(
+        response => {
+            response.json().then(
+                (json) => {
+                    console.log(json);
+                })
+        });
     books.splice(index, 1);
     renderItemsList(books);
 }
@@ -125,11 +146,11 @@ const validateInputForms = () => {
         alert("Field AUTHOR cannot be empty");
         return false;
     }
-    if (numberOfPagesInput.value === 0) {
+    if (!numberOfPagesInput.value.trim().length || parseInt(numberOfPagesInput.value) === 0) {
         alert("Field NUMBER OF PAGES cannot be 0");
         return false
     }
-    if (priceInput.value === 0) {
+    if (!priceInput.value.trim().length) {
         alert("Field PRICE cannot be 0");
         return false
     }
@@ -144,16 +165,29 @@ countBtn.addEventListener("click", () => {
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (validateInputForms()) {
-        let book = {
+        const book = {
             tittle: tittleInput.value,
             author: authorInput.value,
-            numberOfPages: numberOfPagesInput.value,
-            price: priceInput.value
+            description: "none",
+            pages: Number(numberOfPagesInput.value),
+            price: Number(priceInput.value),
+            picture: "default-picture"
         }
+        fetch('http://localhost:5000/api/books', {
+            method: 'POST',
+            body: JSON.stringify(book),
+            headers: {'Content-Type': 'application/json; charset=UTF-8',},
+        }).then(
+            response => {
+                response.json().then(
+                    (json) => {
+                        console.log(json);
+                    })
+            });
         books.push(book);
         clearValuesFromInputs();
     }
-} )
+})
 
 findBtn.addEventListener("click", () => {
     findByTittle(books);
@@ -170,7 +204,7 @@ sortBooksCheckBox.addEventListener("click", () => {
     } else {
         renderItemsList(books);
     }
-} )
+})
 
 homeBtn.addEventListener("click", () => {
     if (createBtn.classList.contains("outlined")) {
@@ -202,15 +236,32 @@ createBtn.addEventListener("click", () => {
 editBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (validateInputForms()) {
-        books[currentIndex] = {
+        const book = {
+            _id: books[currentIndex]._id,
             tittle: tittleInput.value,
             author: authorInput.value,
-            numberOfPages: numberOfPagesInput.value,
-            price: priceInput.value
-        };
+            description: "none",
+            pages: Number(numberOfPagesInput.value),
+            price: Number(priceInput.value),
+            picture: "default-picture"
+        }
+        fetch('http://localhost:5000/api/books', {
+            method: 'PUT',
+            body: JSON.stringify(book),
+            headers: {'Content-Type': 'application/json; charset=UTF-8',},
+        }).then(
+            response => {
+                response.json().then(
+                    (json) => {
+                        console.log(json);
+                    })
+            });
+        books[currentIndex] = book;
         homeBtn.dispatchEvent(clickEvent);
     }
 })
+
+
 
 
 
