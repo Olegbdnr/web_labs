@@ -22,6 +22,7 @@ const editBtn = document.getElementById("submit-edit");
 const clickEvent = new Event("click");
 
 let books = [];
+
 fetch('http://localhost:5000/api/books', {method: 'GET'}).then(
     (response) => {
         response.json().then(
@@ -30,6 +31,7 @@ fetch('http://localhost:5000/api/books', {method: 'GET'}).then(
                 renderItemsList(books);
             })
     });
+
 let currentIndex;
 
 const itemTemplate = ({tittle, author, pages, price}, index) => {
