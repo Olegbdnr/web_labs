@@ -1,6 +1,6 @@
-import Logo from "./Logo";
+import Logo from "../Logo/Logo";
 import Navigation from "./Navigation";
-import "../../src/ComponentsStyle/Header.css";
+import "../../ComponentsStyle/Header.css";
 import SearchBar from "./SearchBar";
 
 const Header = () => {

@@ -1,7 +1,7 @@
-import Facebook from "./Icons/Facebook.png";
-import Twitter from "./Icons/Twitter.png";
-import Linkedin from "./Icons/Linkedin.png";
-import Gplus from "./Icons/Gplus.png";
+import Facebook from "../Icons/Facebook.png";
+import Twitter from "../Icons/Twitter.png";
+import Linkedin from "../Icons/Linkedin.png";
+import Gplus from "../Icons/Gplus.png";
 
 const SocialLinks = () => {
     return (

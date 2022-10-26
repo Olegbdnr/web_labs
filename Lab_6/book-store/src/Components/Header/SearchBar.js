@@ -1,4 +1,4 @@
-import SearchIcon from "./Icons/SearchIcon.png";
+import SearchIcon from "../Icons/SearchIcon.png";
 
 const SearchBar = () => {
     return (

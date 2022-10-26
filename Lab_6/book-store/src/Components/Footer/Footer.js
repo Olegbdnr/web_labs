@@ -1,5 +1,5 @@
-import "./../ComponentsStyle/Footer.css";
-import Logo from "./Logo";
+import "../../ComponentsStyle/Footer.css";
+import Logo from "../Logo/Logo";
 import UsefulLinks from "./UsefulLinks";
 import SocialLinks from "./SocialLinks";
 

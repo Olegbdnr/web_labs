@@ -1,6 +1,6 @@
 const ItemCard = (props) => {
     return (
-        <div className="book-item">
+        <div className="book-item" style={props.style}>
             <div className="img-wrapper">
                 <img src={props.src} alt="bookImage" className="book-image"/>
             </div>

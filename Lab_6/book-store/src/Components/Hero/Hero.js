@@ -1,4 +1,4 @@
-import "../../src/ComponentsStyle/Hero.css";
+import "../../ComponentsStyle/Hero.css";
 import HeroText from "./HeroText";
 import HeroImage from "./HeroImage";
 

@@ -24,18 +24,16 @@ a {
     font-size: 36px;
 }
 
-.cards-wrapper {
+.home-cards-wrapper {
     display: flex;
+    width: 1200px;
+    justify-content: space-between;
     margin-top: 60px;
     margin-bottom: 40px;
 }
 
 .cards-wrapper a {
-    margin-left: 50px;
-}
 
-.cards-wrapper a:first-child {
-    margin-left: 0;
 }
 
 .book-item {
