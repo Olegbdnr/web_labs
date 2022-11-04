@@ -5,16 +5,24 @@
 }
 
 .filter-section {
-    padding: 0 100px;
+    padding: 10px 100px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #202020;
+}
+
+.filters-container {
+    display: flex;
+    align-items: center;
 }
 
 .filter-label {
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 400;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .filter-item {

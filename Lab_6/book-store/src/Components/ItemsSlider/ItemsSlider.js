@@ -1,27 +1,17 @@
 import ItemCard from "../ItemCard/ItemCard";
-import Item1 from "../Icons/Item1.png";
 import "../../ComponentsStyle/ItemsSlider.css";
+import books from "../../data/books.js";
+import {Link} from "react-router-dom";
 
 const ItemsSlider = () => {
+    const data = books;
     return (
         <section className="items-slider">
             <h1 className="items-slider_tittle">Most popular content</h1>
             <div className="home-cards-wrapper">
-                <a href="">
-                    <ItemCard src={Item1} tittle="Solutions Architect’s Handbook" description="
-                    If you're looking to learn programming to solve business problems or
-                    want to enhance your exiting Python progr..." author="Oleh Bodnar" price="544$"/>
-                </a>
-                <a href="">
-                    <ItemCard src={Item1} tittle="Solutions Architect’s Handbook" description="
-                    If you're looking to learn programming to solve business problems or
-                    want to enhance your exiting Python progr..." author="Oleh Bodnar" price="544$"/>
-                </a>
-                <a href="">
-                    <ItemCard src={Item1} tittle="Solutions Architect’s Handbook" description="
-                    If you're looking to learn programming to solve business problems or
-                    want to enhance your exiting Python progr..." author="Oleh Bodnar" price="544$"/>
-                </a>
+                <Link exact to={`/item/${data[0].id}`} key={data[0].id}><ItemCard item={data[0]}/></Link>
+                <Link exact to={`/item/${data[1].id}`} key={data[1].id}><ItemCard item={data[1]}/></Link>
+                <Link exact to={`/item/${data[2].id}`} key={data[2].id}><ItemCard item={data[2]}/></Link>
             </div>
             <a href="">VIEW MORE</a>
         </section>

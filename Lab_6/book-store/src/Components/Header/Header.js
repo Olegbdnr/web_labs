@@ -8,7 +8,6 @@ const Header = () => {
         <header className="header">
             <Logo />
             <Navigation />
-            <SearchBar />
         </header>
     )
 }
