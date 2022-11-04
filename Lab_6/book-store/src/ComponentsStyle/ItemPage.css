@@ -1,0 +1,91 @@
+.item-page-container {
+    display: flex;
+    padding: 30px 100px;
+}
+
+.item-img {
+    width: 300px;
+    height: 359px;
+    border-radius: 4px;
+}
+
+.item-data-container {
+    max-width: 600px;
+    margin-left: 50px;
+}
+
+.item-tittle {
+    font-size: 36px;
+}
+
+.item-desc {
+    font-size: 22px;
+}
+
+.form-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.form-input {
+    height: 23px;
+    width: 100px;
+    font-size: 18px;
+}
+
+.item-price {
+    margin: 30px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.buttons-container {
+    margin-top: 40px;
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.apply-btn {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #f97141;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.decline-btn {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: 3px #f97141 solid;
+    background-color: transparent;
+    color: #f97141;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.increase-btn {
+    border: 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin: 0 7px;
+}
+
+.quantity {
+    font-size: 20px;
+    font-weight: 600;
+}
