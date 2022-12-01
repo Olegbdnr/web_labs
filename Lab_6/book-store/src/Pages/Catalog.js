@@ -1,18 +1,39 @@
 import "./../ComponentsStyle/Catalog.css";
 import Select from "react-select";
-import books from "../data/books.js";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import ItemCard from "../Components/ItemCard/ItemCard";
-
-let data = books;
+import axios from "axios";
+import {Oval} from "react-loader-spinner";
 
 const Catalog = () => {
-    const [books, setBooks] = useState(data);
+    const [books, setBooks] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [loading, setLoading] = useState(false);
+
     const filteredBooks = books.filter(book => {
         return book.tittle.toLowerCase().includes(inputValue.toLowerCase());
     })
+
+    const fetchAllBooks = async () => {
+        await axios.get('http://localhost:5000/api/books')
+            .then(res => {
+                setBooks(res.data);
+            });
+        setLoading(true);
+    }
+
+    const fetchBooksByLang = async (lang) => {
+        await axios.get(`http://localhost:5000/api/books/option/${lang}`)
+            .then(res => {
+                setBooks(res.data);
+            });
+        setLoading(true);
+    }
+
+    useEffect(() => {
+        fetchAllBooks()
+    }, [])
 
     const langOptions = [
         {value: "null", label: "-?-"},
@@ -31,29 +52,25 @@ const Catalog = () => {
         setInputValue(e.target.value);
     }
 
-    const handleLangOption = (selectedOption) => {
+    const handleLangOption = async (selectedOption) => {
         switch (selectedOption.label) {
 
             case "C++":
-                setBooks(data.filter(book => {
-                    return book.tittle.includes("C++");
-                }));
+                await fetchBooksByLang('c++');
                 break;
 
             case "Java":
-                setBooks(data.filter(book => {
-                    return book.tittle.includes("Java");
-                }));
+                await fetchBooksByLang('java');
                 break;
 
             case "Python":
-                setBooks(data.filter(book => {
-                    return book.tittle.includes("Python");
-                }));
+                await fetchBooksByLang('python');
                 break;
 
             default:
-                setBooks(data);
+                fetchAllBooks().then(res => {
+                    console.log(res)
+                });
         }
     }
     const sortBooksByPrice = () => {
@@ -81,7 +98,7 @@ const Catalog = () => {
                 setBooks(sortBooksByAlfabet);
                 break
             default:
-                setBooks(data);
+                fetchAllBooks();
         }
     }
 
@@ -101,11 +118,23 @@ const Catalog = () => {
             </section>
             <div className="page-container">
                 <div className="cards-wrapper">
-                    {filteredBooks.map(book => {
-                        return <Link exact to={`/item/${book.id}`} key={book.id}>
-                                   <ItemCard item={book} style={{width: '250px'}}/>
-                               </Link>
-                    })}
+                    {loading ? (filteredBooks.map(book => {
+                        return <Link exact to={`/item/${book._id}`} key={book.id}>
+                            <ItemCard item={book} style={{width: '250px'}}/>
+                        </Link>
+                    })) : (<Oval
+                        height={80}
+                        width={80}
+                        color="#4fa94d"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        ariaLabel='oval-loading'
+                        secondaryColor="#4fa94d"
+                        strokeWidth={2}
+                        strokeWidthSecondary={2}
+
+                    />)}
                 </div>
             </div>
         </>
